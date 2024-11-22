@@ -124,4 +124,9 @@ where
             (self.event)(state, Event::AboutToWait, event_loop);
         }
     }
+
+    fn user_event(&mut self, event_loop: &ActiveEventLoop, event: E) {
+        let state = self.state.as_mut().unwrap();
+        (self.event)(state, Event::UserEvent(event), event_loop);
+    }
 }

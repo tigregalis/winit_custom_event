@@ -37,7 +37,6 @@ fn main() {
         match event {
             Event::UserEvent(MyEvent) => {
                 println!("received event");
-                unreachable!();
             }
             Event::WindowEvent { window_id, event } if window_id == window.id() => match event {
                 WindowEvent::Resized(size) => {
